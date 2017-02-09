@@ -11,7 +11,6 @@ import android.util.AttributeSet;
 import android.view.View;
 
 /**
- * 旋转的立方体
  * Created by softrice on 17/2/8.
  */
 public class RotatingCubeView extends View {
@@ -93,7 +92,6 @@ public class RotatingCubeView extends View {
 			drawCube(0,canvas);
 		}
 
-		/* 画侧面 */
 		camera.save();
 		camera.rotateY(45);
 		camera.rotateX(value * 360);
@@ -102,7 +100,7 @@ public class RotatingCubeView extends View {
 		camera.getMatrix(matrix);
 		camera.restore();
 
-		// 调节中心点
+		// control center
 		matrix.preTranslate(-viewWidth / 2, -viewHeight / 2);
 		matrix.postTranslate(viewWidth / 2, viewHeight / 2);
 
@@ -117,7 +115,7 @@ public class RotatingCubeView extends View {
 
 	/**
 	 *
-	 * @param position 立方体侧面 按顺序标志为0~3
+	 * @param position side of cube 0~3
 	 * @param canvas
 	 */
 	void drawCube(int position,Canvas canvas) {
@@ -141,7 +139,7 @@ public class RotatingCubeView extends View {
 		camera.getMatrix(matrix);
 		camera.restore();
 
-		// 调节中心点
+		// control center
 		matrix.preTranslate(-viewWidth / 2, -viewHeight / 2);
 		matrix.postTranslate(viewWidth / 2, viewHeight / 2);
 
